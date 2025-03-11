@@ -76,9 +76,9 @@ function App() {
     <>
       <div className="w-full h-full flex flex-col">
         <Header />
-        <main className="w-full min-h-screen py-5 ">
+        <main className="w-full min-h-screen py-5">
           <div className="w-full h-auto flex justify-center items-center">
-            <div className="w-[300px] sm:w-[640px] h-auto flex justify-center items-center my-4 gap-2">
+            <div className="min-w-[300px] w-80h sm:w-[640px] max-w-[740px] h-auto flex justify-center items-center my-4 gap-2">
               <input
                 type="text"
                 className="w-5/6 py-3 pl-10 pr-6 bg-[#A3B18A] text-lg rounded-3xl border-gray-200 text-black flex
@@ -89,13 +89,12 @@ function App() {
                 onKeyDown={(event) => searchCity(event)}
               />
 
-              {/* Search Button with Image */}
               <button
                 className="w-1/6 h-full flex items-center justify-center !bg-[#588157] rounded-3xl md:rounded-4xl shadow-md
                           hover:bg-[#8a9b68] transition duration-300"
                 onClick={() => searchCity({ key: 'Enter' })}
               >
-                <img src={Search} alt="Search Icon" className="w-6 h-6" />
+                <img src={Search} alt="Search Icon" className="w-6 h-6 object-contain" />
               </button>
             </div>
           </div>
@@ -108,10 +107,8 @@ function App() {
             </div>
           </div>
           
-          <div className="w-full h-auto flex flex-col my-5 justify-center items-center gap-4">
-            <div className='w-full flex '>
-              <Forecast title='Hourly Forecast for 5 days' type='hourly' data={forecast}/>
-            </div>
+          <div className="w-full sm:w-[640px] md:w-[740px] h-auto flex flex-col my-5 justify-center items-center gap-4">
+            <Forecast title='Hourly Forecast for 5 days' type='hourly' data={forecast}/>
           </div>
           
           

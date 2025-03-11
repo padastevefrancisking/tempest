@@ -9,14 +9,14 @@ function Forecast({ title, type, data }) {
     return (
         <div className="w-full flex flex-col">
             {/* Title */}
-            <div className="w-full flex text-black mt-1 mb-0 text-xl px-6">
+            <div className="w-full flex text-black mt-1 mb-0 text-xl text-left px-6">
                 <h3>{title}</h3>
             </div>
 
             {/* Reserve the container space with fixed dimensions */}
-            <div className="w-[300px] sm:w-[440px] md:w-[740px] min-h-[200px] overflow-x-auto p-4 rounded-4xl">
+            <div className="min-w-[320px] w-[80vh] sm:w-[640px] md:w-[740px] min-h-[200px] overflow-x-auto p-4 rounded-4xl">
                 {hasData ? (
-                    <div className="flex gap-3 md:gap-6 w-max">
+                    <div className="flex gap-3 md:gap-6 w-max justify-center ">
                         {data.list.map((indivData, index) => (
                             <div key={index} className="w-[145px] flex flex-col text-black rounded-2xl">
                                 {type === 'hourly' ? (
